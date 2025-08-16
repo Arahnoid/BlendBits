@@ -234,3 +234,21 @@ This scritp is useful if you use Matcaps from  this [[https://github.com/nidorx/
 which have complex names like this =4F4F4F_9C9C9C_121212_7C7C7C= and you for some reason need to know the name of current matcap.
 
 #  LocalWords:  unlink unlinking unlinked
+
+** Copy name of selected collections
+File: =copy_name_of_selected_collections.py=
+
+[[./images/misc-copy_name_of_selected_collections.gif]]
+
+Adds an option in outliner collections context menu to copy names of selected collections.
+
+Tip: If you find out what you use it often you may want to install it as a plugin.
+
+** Copy name of selected objects
+File: =copy_name_of_selected_objects.py=
+
+[[./images/misc-copy_name_of_selected_objects.gif]]
+
+Adds an option in outliner objects context menu to copy names of selected objects.
+
+Tip: If you find out what you use it often you may want to install it as a plugin.
