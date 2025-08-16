@@ -112,7 +112,7 @@ This Blender script moves each selected object into its own new collection named
 after the object. The object will be unlinked from any collections it currently
 belongs to, and then linked exclusively to its newly created collection.
 
-* Materials
+* Material scripts
 ** Delete all materials
 File: =delete_all_materials.py=
 
@@ -138,7 +138,7 @@ Example:
 
 will be merged into =Dark_Wood=
 
-* Other
+* Miscelanous scripts
 These are some utility scripts.
 
 ** Find heavy meshes in scene
