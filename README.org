@@ -1,0 +1,64 @@
+* BlendBits
+Collection of blender scripts. From one-liners to panels.
+
+* Script runner
+File: =script_runner.py=
+
+[[./images/other-script-runner.png]]
+
+This add-on allows you to organize and run custom Python scripts directly inside
+Blender. Scripts are grouped into categories (subfolders), which makes managing
+large script collections easier.
+
+* Collection scripts
+** Collection name from selection
+File: =collection_name_from_selection.py=
+
+[[./images/col-collection_name_from_selection.gif]]
+
+This script renames the *first* (primary) collection of each selected object to
+match that object's own name. It is handy when you want the collection hierarchy
+to mirror the object names for easier organization.
+
+** Item name from collection
+File: =item_name_from_collection.py=
+
+[[./images/col-item_name_from_collection.gif]]
+
+This Blender script renames selected objects to match the name of their
+parent(first linked) collection.
+
+** Move selected to collections with suffix
+File: =move_selected_to_collections_suffix.py=
+
+[[./images/col-move_selected_to_collections_suffix.gif]]
+
+This Blender script moves each selected object into a new or existing collection
+whose name is the object's name plus a configurable suffix. If the object is
+already in the correct collection, it will be skipped to avoid unnecessary
+unlink/relink operations.
+
+** Selected to collection parented empty
+File: =selected_to_collection_parented_empty.py=
+
+[[./images/col-selected_to_collection_parented_empty.gif]]
+
+This Blender script processes each selected mesh object by:
+1. Creating an Empty object with the same name (if it doesn’t already exist).
+2. Matching the Empty's location, rotation, and scale to the mesh.
+3. Parenting the mesh to the Empty without altering world transforms (if not
+   already parented).
+4. Creating (or reusing) a collection named after the mesh.
+5. Moving both the mesh and the Empty into that collection, unlinking them from
+   all others.
+
+** Selected to collection
+File: =selected_to_collection.py=
+
+[[./images/col-selected_to_collection.gif]]
+
+This Blender script moves each selected object into its own new collection named
+after the object. The object will be unlinked from any collections it currently
+belongs to, and then linked exclusively to its newly created collection.
+
+#  LocalWords:  unlink unlinking unlinked
