@@ -7,8 +7,59 @@ File: =script_runner.py=
 [[./images/other-script-runner.png]]
 
 This add-on allows you to organize and run custom Python scripts directly inside
-Blender. Scripts are grouped into categories (subfolders), which makes managing
-large script collections easier.
+Blender. Scripts are grouped into categories (subfolders), making it easier to
+manage large script collections.
+
+- *Set Script Folder*
+  Opens a folder picker to select the root folder containing your scripts.
+  This folder must contain at least one subfolder with scripts.
+  You can name the subfolder however you like, e.g. =main=.
+
+
+  Example of root folder with subfolders as categories:
+
+  #+begin_src
+    scripts/
+        main/
+            useful_script.py
+        modeling/
+            bevel_tools.py
+            cleanup.py
+        rendering/
+            setup_cycles.py
+            render_preset.py
+        other/
+            ...
+  #+end_src
+
+  By default, Script Runner will look for a =scripts= folder in the same
+  directory as the current Blender file.
+
+  *Tip!* If you don’t want to edit the Script Runner code to define a custom
+  folder, simply select your scripts folder once and then save the Blender
+  startup file. After that, Blender will always start with Script Runner
+  pointing to your chosen folder.
+
+- *Refresh*
+  Use this button when you add a new subfolder or script.
+  It will re-scan the root folder and update the available categories and scripts.
+
+- *Script Category*
+  Dropdown to select the subfolder containing your scripts.
+
+- *Script Select*
+  Dropdown to select the script you want to run.
+
+- *Run*
+  Executes the currently selected script.
+
+
+Similar blender extensions:
+
+- [[https://extensions.blender.org/add-ons/blender-run-scripts-from-folder/][Run Scripts From Folder]]
+- [[https://extensions.blender.org/add-ons/script-manager-pro/][Script Manager Pro]]
+
+
 
 * Collection scripts
 ** Collection name from selection
