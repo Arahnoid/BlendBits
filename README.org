@@ -138,7 +138,27 @@ Example:
 
 will be merged into =Dark_Wood=
 
-* Miscelanous scripts
+** Create material palette from selected
+File: =create_material_palette_from_selected.py=
+
+[[./images/mat-create_material_palette_from_selected.gif]]
+
+Use case:
+
+When you import models from external sources, you may want to quickly check how
+many materials they use and what their names are. This script makes it easier to
+visualize materials by creating one UV sphere per material and naming the sphere
+after that material.
+
+Features:
+
+- Automatically generates a UV sphere for each unique material.
+- Arranges the spheres in a row or a grid with multiple rows.
+- Allows you to set a custom name prefix for the spheres.
+- Customizable sphere geometry (segments, rings, radius) and spacing.
+
+
+* Miscellaneous scripts
 These are some utility scripts.
 
 ** Find heavy meshes in scene
