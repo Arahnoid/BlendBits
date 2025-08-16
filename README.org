@@ -157,6 +157,37 @@ Features:
 - Allows you to set a custom name prefix for the spheres.
 - Customizable sphere geometry (segments, rings, radius) and spacing.
 
+** Resize texture nodes
+File: =resize_texture_nodes.py=
+
+[[./images/mat-resize_texture_nodes.gif]]
+
+Enlarges the visual width of all *Image Texture* (=TEX_IMAGE=) nodes in the
+node‑trees of selected objects’ materials, making them easier to locate in the
+Shader Editor.
+
+It is useful if you want to make all *Image Texture* nodes same size or larger
+to reveal texture name.
+
+** Swap material slots
+File: =swap_material_slots.py=
+
+[[./images/mat-swap_material_slots.gif]]
+
+Swaps the first and second material slots of all selected mesh objects, and
+updates polygon assignments so materials remain correctly mapped.
+
+* Modifier scripts
+** Modifiers Tools
+File: =modifier_tools.py=
+
+[[./images/mod-modifier-tools.png]]
+
+Create a panel in Tools tab.
+
+Allows to remove, toggle on and off modifiers on selected objects. Scripts will
+show only modifiers on selected objects. So if selected objects do not have any
+modifiers the dropdown select will show no modifiers.
 
 * Miscellaneous scripts
 These are some utility scripts.
