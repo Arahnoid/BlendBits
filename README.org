@@ -115,6 +115,32 @@ belongs to, and then linked exclusively to its newly created collection.
 #  LocalWords:  unlink unlinking unlinked
 
 
+* Materials
+** Delete all materials
+File: =delete_all_materials.py=
+
+[[./images/mat-delete_all_materials.gif]]
+
+Delete All Materials from Selected Objects.
+
+Use case. Sometimes when you import =svg= files it creates materials you do not
+need. This script helps to delete materials.
+
+** Remove material duplicates
+File: =remove_material_duplicates.py=
+
+Remove Material Duplicates in Blender file.
+
+It find materials which share the same base name and have a numerical prefix
+e.g. =.001=, =.002= etc. and merges them into one.
+
+Example:
+- =Dark_Wood=
+- =Dark_Wood.001=
+- =Dark_Wood.002=
+
+will be merged into =Dark_Wood=
+
 * Other
 These are some utility scripts.
 
@@ -150,3 +176,6 @@ File: =switch_curve_direction.py=
 
 
 Flips the direction of all selected curve objects in Blender.
+
+** Matcap name copy to clipboard
+File: =matcap_name_copy_to_clipboard.py=

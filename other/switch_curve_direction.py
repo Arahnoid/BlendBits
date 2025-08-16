@@ -1,7 +1,9 @@
 """
 switch_curve_direction.py
 -------------------------
-Flips the direction of all selected curve objects in Blender.
+
+Description:
+    Flips the direction of all selected curve objects in Blender.
 
 How it works:
     - Iterates through all selected objects in the scene.
