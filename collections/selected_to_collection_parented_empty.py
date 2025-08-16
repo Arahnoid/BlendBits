@@ -4,11 +4,11 @@ selected_to_collection_parented_empty.py
 
 Description:
     This Blender script processes each selected mesh object by:
-      1. Creating an Empty object with the same name (if it doesn’t already exist).
-      2. Matching the Empty's location, rotation, and scale to the mesh.
-      3. Parenting the mesh to the Empty without altering world transforms (if not already parented).
-      4. Creating (or reusing) a collection named after the mesh.
-      5. Moving both the mesh and the Empty into that collection, unlinking them from all others.
+    1. Creating an Empty object with the same name (if it doesn’t already exist).
+    2. Matching the Empty's location, rotation, and scale to the mesh.
+    3. Parenting the mesh to the Empty without altering world transforms (if not already parented).
+    4. Creating (or reusing) a collection named after the mesh.
+    5. Moving both the mesh and the Empty into that collection, unlinking them from all others.
 
 Usage:
     1. In Blender, select one or more mesh objects.

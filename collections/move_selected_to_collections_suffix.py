@@ -1,5 +1,5 @@
 """
-move_selected_to_collectios_suffix.py
+move_selected_to_collections_suffix.py
 -------------------------------------
 
 Description:
