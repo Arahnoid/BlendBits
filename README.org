@@ -113,3 +113,40 @@ after the object. The object will be unlinked from any collections it currently
 belongs to, and then linked exclusively to its newly created collection.
 
 #  LocalWords:  unlink unlinking unlinked
+
+
+* Other
+These are some utility scripts.
+
+** Find heavy meshes in scene
+File: =find_heavy_meshes_in_scene.py=
+
+[[./images/other-find_heavy_meshes_in_scene.gif]]
+
+This script scans all objects in the current Blender scene and automatically
+selects those mesh objects whose polygon count exceeds a specified threshold
+(default: 1,000 polygons).
+
+I use it when I import a lot of meshes into blender file or want to find large or unoptimized meshes in the scene.
+
+** Save file size repport
+File: =save_file_size_repport.py=
+
+[[./images/other-save_file_size_repport.gif]]
+
+This script was inspired by [[https://www.youtube.com/@animagraffs][Jake O'Neal]] in the video [[https://www.youtube.com/watch?v=itj2t8Fv8xs][How I recreated Hoover Dam in 3D]].
+
+TL;DR Shows how file size changed in size after save.
+
+This script adds two handlers that monitor the size of the current .blend file
+before and after each save operation. When a file is saved, the script compares
+the new file size to the previous size and displays a popup showing the change
+in megabytes.
+
+** Switch curve direction
+File: =switch_curve_direction.py=
+
+[[./images/other-switch_curve_direction.gif]]
+
+
+Flips the direction of all selected curve objects in Blender.
