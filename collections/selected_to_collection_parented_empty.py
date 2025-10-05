@@ -25,7 +25,7 @@ Notes:
 import bpy
 
 
-def main():
+def selected_to_collection_parented_empty():
     selected_meshes = [
         obj for obj in bpy.context.selected_objects if obj.type == "MESH"
     ]
@@ -70,4 +70,4 @@ def main():
     print("Done: All selected mesh objects processed.")
 
 
-main()
+selected_to_collection_parented_empty()

@@ -70,5 +70,4 @@ def switch_curves_direction():
         bpy.data.objects[obj.name].select_set(True)
 
 
-# Run
 switch_curves_direction()

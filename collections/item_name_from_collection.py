@@ -68,5 +68,4 @@ def rename_selected_to_collection():
             counter += 1
 
 
-# Run it
 rename_selected_to_collection()

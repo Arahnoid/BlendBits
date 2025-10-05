@@ -11,17 +11,17 @@ It performs the following steps:
     1. Detects "original" materials (without numeric suffix) and maps them
     to their duplicates (with .001, .002, etc.).
     2. Replaces all occurrences of duplicate materials in all objects
-    across all scenes with their corresponding original material.
+       across all scenes with their corresponding original material.
     3. Purges unused duplicate materials using Blender's Orphan Data Purge.
 
 Usage:
-- Open the script in Blender's Text Editor.
-- Press Alt+P to run.
-- All duplicate materials will be replaced and removed automatically.
+    - Open the script in Blender's Text Editor.
+    - Press Alt+P to run.
+    - All duplicate materials will be replaced and removed automatically.
 
 Note:
-- Only duplicates with numeric suffixes (.001, .002, etc.) are handled.
-- If the suffix-free original material does not exist, duplicates will be skipped.
+    - Only duplicates with numeric suffixes (.001, .002, etc.) are handled.
+    - If the suffix-free original material does not exist, duplicates will be skipped.
 """
 
 import bpy

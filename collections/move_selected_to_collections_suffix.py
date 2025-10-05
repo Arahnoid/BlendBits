@@ -52,6 +52,7 @@ def move_object_to_named_collection(obj, suffix):
     new_collection.objects.link(obj)
 
 
+
 # Process all selected objects
 for obj in bpy.context.selected_objects:
     move_object_to_named_collection(obj, SUFFIX)
