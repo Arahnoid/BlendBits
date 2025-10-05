@@ -39,6 +39,7 @@ Tips:
 
 import os
 import bpy
+from bpy.types import Operator, Panel, PropertyGroup
 
 bl_info = {
     "name": "Script Runner",
@@ -79,7 +80,7 @@ def get_scripts_in_category(self, context):
 # --- Property Group ---
 
 
-class SCRIPT_RUNNER_PN(bpy.types.PropertyGroup):
+class SCRIPT_RUNNER_PN(PropertyGroup):
     # Folders that should not appear in category list
     IGNORED_FOLDERS = {".git", "__pycache__", ".idea", ".vscode", "venv"}
 
@@ -106,7 +107,7 @@ class SCRIPT_RUNNER_PN(bpy.types.PropertyGroup):
 # --- Script Runner Operator ---
 
 
-class SCRIPT_RUNNER_OT_run_script(bpy.types.Operator):
+class SCRIPT_RUNNER_OT_run_script(Operator):
     bl_idname = "wm.run_selected_script"
     bl_label = "Run Selected Script"
 
@@ -135,7 +136,7 @@ class SCRIPT_RUNNER_OT_run_script(bpy.types.Operator):
 # --- Refresh Operator (Manual Update) ---
 
 
-class SCRIPT_RUNNER_OT_update_script_list(bpy.types.Operator):
+class SCRIPT_RUNNER_OT_update_script_list(Operator):
     bl_idname = "wm.update_script_list"
     bl_label = ""
     bl_icon = "REFRESH"
@@ -147,7 +148,7 @@ class SCRIPT_RUNNER_OT_update_script_list(bpy.types.Operator):
         return {"FINISHED"}
 
 
-class SCRIPT_RUNNER_OT_set_folder(bpy.types.Operator):
+class SCRIPT_RUNNER_OT_set_folder(Operator):
     bl_idname = "wm.set_script_folder"
     bl_label = "Set Scripts Folder"
     bl_description = "Choose the root folder containing script categories"
@@ -169,10 +170,23 @@ class SCRIPT_RUNNER_OT_set_folder(bpy.types.Operator):
         return {"RUNNING_MODAL"}
 
 
+# --- Toggle Terminal Operator ---
+
+
+class SCRIPT_RUNNER_OT_toggle_terminal(Operator):
+    bl_idname = "wm.toggle_terminal"
+    bl_label = "Toggle Terminal"
+    bl_description = "Show or hide the terminal window"
+
+    def execute(self, context):
+        bpy.ops.wm.console_toggle()
+        return {'FINISHED'}
+    
+
 # --- UI Panel ---
 
 
-class SCRIPT_RUNNER_PT_panel(bpy.types.Panel):
+class SCRIPT_RUNNER_PT_panel(Panel):
     bl_label = "Script Runner"
     bl_idname = "SCENE_PT_script_runner"
     bl_space_type = "VIEW_3D"
@@ -188,7 +202,8 @@ class SCRIPT_RUNNER_PT_panel(bpy.types.Panel):
         # Folder path
         # row.prop(props, "folder_path")
         row.operator(SCRIPT_RUNNER_OT_set_folder.bl_idname)
-        row.operator(SCRIPT_RUNNER_OT_update_script_list.bl_idname, icon="FILE_REFRESH")
+        row.operator(SCRIPT_RUNNER_OT_toggle_terminal.bl_idname, text="", icon="CONSOLE")
+        row.operator(SCRIPT_RUNNER_OT_update_script_list.bl_idname,text="", icon="FILE_REFRESH")
 
         layout.prop(props, "category")
         row = layout.row()
