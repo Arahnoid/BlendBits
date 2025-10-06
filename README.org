@@ -207,7 +207,7 @@ File: =loops_dissolve.py=
 
 Dissolve loops of selected edges.
 
-** Loop checker dissolve
+** Loop ring dissolve
 File: =loops_ring_dissolve.py=
 
 [[./images/cleanup-loops_ring_dissolve.gif]]
