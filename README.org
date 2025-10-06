@@ -228,6 +228,20 @@ selects those mesh objects whose polygon count exceeds a specified threshold
 
 I use it when I import a lot of meshes into blender file or want to find large or unoptimized meshes in the scene.
 
+** Find non latin characters
+File: =find_non_latin_characters.py=
+
+This script scans a .blend file for any datablocks whose names contain
+non-Latin characters. It checks:
+
+- Objects
+- Object data (meshes, curves, armatures, lattices, metaballs, grease pencils)
+- Materials, textures, images, collections, node groups
+- Nodes inside materials and node groups
+- Text datablocks
+
+For example, the Cyrillic letters **р, о, с, х, е** look identical to the Latin letters **p, o, c, x, e**, which can cause confusion or other issues.
+
 ** Save file size repport
 File: =save_file_size_repport.py=
 

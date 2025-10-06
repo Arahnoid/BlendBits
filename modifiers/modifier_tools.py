@@ -34,6 +34,10 @@ Notes:
     - Removing modifiers is irreversible unless undone (Ctrl+Z).
 """
 
+import bpy
+from bpy.types import Operator, Panel
+
+
 bl_info = {
     "name": "Modifier Tools: Remove / Hide / Show",
     "author": "Your Name",
@@ -47,12 +51,10 @@ bl_info = {
 }
 
 
-import bpy
-
-
 # --------------------------------------------------------------------
 # Utility: Get dropdown items dynamically from selected objects
 # --------------------------------------------------------------------
+
 def get_modifier_items(self, context):
     """Generate dropdown items based on selected objects."""
     if not context.selected_objects:
@@ -70,7 +72,7 @@ def get_modifier_items(self, context):
 # --------------------------------------------------------------------
 # Operator: Remove modifiers
 # --------------------------------------------------------------------
-class RemoveModifierOperator(bpy.types.Operator):
+class RemoveModifierOperator(Operator):
     """Remove selected modifier(s) from all selected objects"""
 
     bl_idname = "object.remove_modifier"
@@ -100,7 +102,7 @@ class RemoveModifierOperator(bpy.types.Operator):
 # --------------------------------------------------------------------
 # Operator: Hide modifiers
 # --------------------------------------------------------------------
-class HideModifierOperator(bpy.types.Operator):
+class HideModifierOperator(Operator):
     """Hide selected modifier(s) in the viewport"""
 
     bl_idname = "object.hide_modifier"
@@ -130,7 +132,7 @@ class HideModifierOperator(bpy.types.Operator):
 # --------------------------------------------------------------------
 # Operator: Show modifiers
 # --------------------------------------------------------------------
-class ShowModifierOperator(bpy.types.Operator):
+class ShowModifierOperator(Operator):
     """Show selected modifier(s) in the viewport"""
 
     bl_idname = "object.show_modifier"
@@ -160,7 +162,7 @@ class ShowModifierOperator(bpy.types.Operator):
 # --------------------------------------------------------------------
 # Panel in 3D Viewport Sidebar
 # --------------------------------------------------------------------
-class VIEW3D_PT_modifier_tools_panel(bpy.types.Panel):
+class VIEW3D_PT_modifier_tools_panel(Panel):
     bl_label = "Modifier Tools"
     bl_idname = "VIEW3D_PT_modifier_tools_panel"
     bl_space_type = "VIEW_3D"  # 3-D Viewport
@@ -186,24 +188,30 @@ class VIEW3D_PT_modifier_tools_panel(bpy.types.Panel):
 # --------------------------------------------------------------------
 # Registration
 # --------------------------------------------------------------------
+
+classes = (
+    RemoveModifierOperator,
+    HideModifierOperator,
+    ShowModifierOperator,
+    VIEW3D_PT_modifier_tools_panel,
+)
+
+
 def register():
-    bpy.utils.register_class(RemoveModifierOperator)
-    bpy.utils.register_class(HideModifierOperator)
-    bpy.utils.register_class(ShowModifierOperator)
-    bpy.utils.register_class(VIEW3D_PT_modifier_tools_panel)
+    for cls in classes:
+        bpy.utils.register_class(cls)
     bpy.types.Scene.modifier_tool_type = bpy.props.EnumProperty(
         name="Modifier Type",
         description="Choose which modifier type to affect",
         items=get_modifier_items,
+        default="ALL",
     )
 
 
 def unregister():
+    for cls in reversed(classes):
+        bpy.utils.unregister_class(cls)
     del bpy.types.Scene.modifier_tool_type
-    bpy.utils.unregister_class(VIEW3D_PT_modifier_tools_panel)
-    bpy.utils.unregister_class(ShowModifierOperator)
-    bpy.utils.unregister_class(HideModifierOperator)
-    bpy.utils.unregister_class(RemoveModifierOperator)
 
 
 if __name__ == "__main__":
