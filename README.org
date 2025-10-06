@@ -240,7 +240,7 @@ non-Latin characters. It checks:
 - Nodes inside materials and node groups
 - Text datablocks
 
-For example, the Cyrillic letters **р, о, с, х, е** look identical to the Latin letters **p, o, c, x, e**, which can cause confusion or other issues.
+For example, the Cyrillic letters *р, о, с, х, е* look identical to the Latin letters *p, o, c, x, e*, which can cause confusion or other issues.
 
 ** Save file size repport
 File: =save_file_size_repport.py=
