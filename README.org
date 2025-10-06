@@ -189,6 +189,31 @@ Allows to remove, toggle on and off modifiers on selected objects. Scripts will
 show only modifiers on selected objects. So if selected objects do not have any
 modifiers the dropdown select will show no modifiers.
 
+* Cleanup scripts
+Collection of scripts used to cleanup meshes.
+
+** Loop checker dissolve
+
+File: =loops_checker_dissolve.py=
+
+[[./images/cleanup-loops_checker_dissolve.gif]]
+
+Dissolve every second edge
+
+** Loop dissolve
+File: =loops_dissolve.py=
+
+[[./images/cleanup-loops_dissolve.gif]]
+
+Dissolve loops of selected edges.
+
+** Loop checker dissolve
+File: =loops_ring_dissolve.py=
+
+[[./images/cleanup-loops_ring_dissolve.gif]]
+
+Dissolve loops of selected edges and edges in between.
+
 * Miscellaneous scripts
 These are some utility scripts.
 

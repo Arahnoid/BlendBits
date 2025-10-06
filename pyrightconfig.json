@@ -1,0 +1,24 @@
+{
+  "include": [
+    "."
+  ],
+  "exclude": [
+    "**/__pycache__",
+    "**/node_modules",
+    "**/.venv"
+  ],
+  "extraPaths": [
+    "./.venv/lib/site-packages"
+  ],
+  "reportMissingImports": "none",
+  "reportMissingModuleSource": "none",
+  "reportAttributeAccessIssue": "none",
+  "reportIncompatibleMethodOverride": "none",
+  "reportUnknownMemberType": "none",
+  "reportOptionalMemberAccess": "none",
+  "reportPrivateUsage": "none",
+  "reportUnusedImport": "warning",
+  "reportUnusedVariable": "warning",
+  "pythonVersion": "3.11",
+  "typeCheckingMode": "basic"
+}
